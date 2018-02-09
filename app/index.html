@@ -7,37 +7,41 @@
 
 </head>
 <body>
-
-    <div class="ui">
-        <div data-bind="foreach: algorithmList" class="button-set">
-            <label>
-                <input type="radio" data-bind="checkedValue: $data, checked: $root.algorithm">
-                <span data-bind="text: $data" class="button"></span>
-            </label>
+    <div class="container">
+        <div class="ui">
+            <div data-bind="foreach: algorithmList" class="button-set sort-types">
+                <label>
+                    <input type="radio" data-bind="checkedValue: $data, checked: $root.algorithm">
+                    <span data-bind="text: $data" class="button"></span>
+                </label>
+            </div>
+        
+            <div class="options clearfix">
+                <label>Options: </label>
+                <div>
+                    <input type="range" data-bind="
+                        value: speed,
+                        attr: { min: speedMin, max: speedMax }">
+                </div>
+                        
+                <div data-bind="foreach: sizeList" class="button-set options-button-set">
+                    <label>
+                        <input type="radio" data-bind="checkedValue: $data, checked: $root.size">
+                        <span data-bind="text: $data" class="button btn-size-list"></span>
+                    </label>
+                </div>
+                        
+                <div class="button-set options-reset">
+                    <label>
+                        <span data-bind="click: restart" class="button">Restart</span>
+                    </label>
+                </div>
+            </div>
         </div>
-
-        <div>
-            <input type="range" data-bind="
-                value: speed,
-                attr: { min: speedMin, max: speedMax }">
+        
+        <div class="graph">
+            <canvas id="graph-canvas" width="450" height="350"></canvas>
         </div>
-
-        <div data-bind="foreach: sizeList" class="button-set">
-            <label>
-                <input type="radio" data-bind="checkedValue: $data, checked: $root.size">
-                <span data-bind="text: $data" class="button"></span>
-            </label>
-        </div>
-
-        <div class="button-set">
-            <label>
-                <span data-bind="click: restart" class="button">Restart</span>
-            </label>
-        </div>
-    </div>
-
-    <div class="graph">
-        <canvas id="graph-canvas" width="450" height="350"></canvas>
     </div>
 
 

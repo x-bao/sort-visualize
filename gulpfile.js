@@ -11,18 +11,24 @@ var srcFiles = [
     'src/viewmodel.js',
     'src/main.js',
 ];
+
+var appDir = 'app/'
+
 var destSrc = 'app.js';
 var destDir = 'app/js';
 
 var stylusFiles = 'app/css/*.styl';
 var stylusDestDir = 'app/css';
 
+var htmlFile = 'app/index.html';
 
-gulp.task('default', ['build']);
+
+gulp.task('default', ['build', 'watch']);
 
 gulp.task('watch', function() {
     gulp.watch(srcFiles, ['js']);
     gulp.watch(stylusFiles, ['stylus']);
+    // gulp.watch(htmlFile, ['html']);
 });
 
 gulp.task('build', ['js', 'stylus']);
@@ -39,4 +45,9 @@ gulp.task('stylus', function() {
          .on('error', function(err) { console.error(err.message) })
          .pipe(gulp.dest(stylusDestDir));
 });
+
+gulp.task('html', function() {
+    gulp.src(htmlFile)
+        .pipe(gulp.dest(appDir))
+})
 

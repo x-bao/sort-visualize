@@ -2,27 +2,50 @@ body
     margin: 0px
     padding: 4px 0px
     background: #333
+    font-size: 12px
+    font-family: "SFMono-Regular", Consolas,"Roboto Mono","Droid Sans Mono","Liberation Mono",Menlo,Courier,monospace
+    -webkit-font-smoothing: antialiased
+    
+    .container
+        width: 700px
+        max-width: 700px
+        margin: 0 auto
+        padding: 20px 20px
 
 .ui
+    display: flex
+    flex-direction: column
+    align-items: center
     & > div
-        display: inline-block
-        margin-bottom: 5px
-
+        margin: 0 auto
+    .button-set
+        font-size: 0
+    
+    .options
+        width: 500px
+        padding: 15px 0
+        display: flex
+        justify-content: space-around
+        align-items: center
+        > label
+            font-size: 14px
+            margin-right: 10px
+            color: #fff
+        .btn-size-list
+            width: 35px
+            padding: 6px 0
+            text-align: center
+            
 
     input[type=radio]
         display: none
-
-    .button-set
-        font-size: 0px
-        margin: 0px 5px
 
     .button
         display: inline-block
         background: #ddd
         padding: 6px 4px
         border-right: 1px solid #bbb
-        font-size: 10px
-        font-family: monospace
+        font-size: 12px
 
         &:hover
             background: #ccc
@@ -41,12 +64,10 @@ body
         background: #666
         color: white
 
-    input[type=range]
-        position: relative
-        top: 7px
-
 .graph
     canvas
+        display: block
+        margin: 0 auto
 
 
 
