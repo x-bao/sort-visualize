@@ -1,7 +1,7 @@
 可视化排序
 --------
 
-来自日本小哥哥 norahiko 的排序动画
+来自日本小哥哥 [norahiko 的排序动画](https://github.com/norahiko/sort-visualize)
 
 本地运行
 -------
